@@ -22,6 +22,8 @@ $(function(){
 	
 	//Show first slide
 	slide[0].fadeIn();
+	$(".arrow").css("opacity", "0.6");
+	$(".slider-overlay").css("opacity", "1");
 	
 	//Set currentslide to 0 for array
 	var currentSlide = 0;
@@ -36,6 +38,7 @@ $(function(){
 	var nextSlide = function(){
 		slide[currentSlide].fadeOut();
 		$(".arrow").css("opacity", "0");
+		$(".slider-overlay").css("opacity", "0");
 		//If not last slide, go to next slide
 		if (currentSlide != lastSlide){
 			currentSlide++;
@@ -47,6 +50,7 @@ $(function(){
 		setTimeout(function(){
 			slide[currentSlide].fadeIn();
 			$(".arrow").css("opacity", "0.6");
+			$(".slider-overlay").css("opacity", "1");
 		},400);
 	}
 	
